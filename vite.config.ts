@@ -7,5 +7,8 @@ export default defineConfig({
     react(), // ✅ Official plugin
     tsconfigPaths()
   ],
+  build: {
+    outDir: 'dist',  // default is 'dist'
+  },
   base: '/', // ✅ Required for correct routing
 });
