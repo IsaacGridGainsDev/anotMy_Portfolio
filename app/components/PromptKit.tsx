@@ -1,7 +1,11 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-const PromptKit = () => {
+interface PromptKitProps {
+  id?: string;
+}
+
+const PromptKit: React.FC<PromptKitProps> = ({ id = 'prompt-kit' }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const [promptInput, setPromptInput] = useState('');
@@ -40,7 +44,7 @@ Best regards,
   };
 
   return (
-    <section id="prompt-kit" ref={sectionRef} className="py-20 px-4">
+    <section id={id} ref={sectionRef} className="py-20 px-4 bg-white dark:bg-gray-950">
       <div className="max-w-4xl mx-auto">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#800000] dark:text-white"

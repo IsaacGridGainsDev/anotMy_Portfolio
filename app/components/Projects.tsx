@@ -2,6 +2,10 @@ import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 
+interface ProjectsProps {
+  id?: string;
+}
+
 // Project data
 const projectsData = [
   {
@@ -9,7 +13,7 @@ const projectsData = [
     title: 'AI Lead Generation Assistant',
     description: 'Automated system for real estate agents to qualify and follow up with leads.',
     tags: ['AI', 'Automation', 'Business'],
-    category: 'AI Tools',
+    category: 'Prompt Kits',
     image: '/images/project1.svg', // Placeholder for SVG
     links: {
       github: 'https://github.com/isaac-akinladejo/lead-gen-ai',
@@ -20,39 +24,39 @@ const projectsData = [
   },
   {
     id: 2,
-    title: 'Custom Prompt Engineering Kit',
-    description: 'Specialized prompt templates for business automation and customer service.',
-    tags: ['Prompts', 'Templates', 'UX'],
-    category: 'Prompt Kits',
+    title: 'WhatsDoc Automator',
+    description: 'Python application that converts WhatsApp voice notes and chats into professional documents.',
+    tags: ['Voice Note Transcription', 'Document Templates', 'Automation Panel'],
+    category: 'Transcription',
     image: '/images/project2.svg', // Placeholder for SVG
     links: {
-      github: 'https://github.com/isaac-akinladejo/prompt-kits',
-      fiverr: 'https://fiverr.com/isaac_akinladejo/design-custom-prompt-systems',
+      github: 'https://github.com/IsaacGridGainsDev/WhatsDoc',
+      fiverr: 'https://www.fiverr.com/sellers/god_is_a_ble',
     },
-    techStack: ['GPT-4', 'Claude', 'Anthropic']
+    techStack: ['CustomTkinter', 'Python', 'OpenAI']
   },
   {
     id: 3,
-    title: 'AI-Powered CRM Dashboard',
-    description: 'Interactive dashboard with AI insights for customer relationship management.',
-    tags: ['GUI', 'Dashboard', 'CRM'],
-    category: 'GUIs',
+    title: 'Auto Fonts Installer',
+    description: 'Interactive Python application that automates installing fonts from ZIP files or folders.',
+    tags: ['GUI', 'Dashboard', 'Automation'],
+    category: 'AI Tools',
     image: '/images/project3.svg', // Placeholder for SVG
     links: {
-      github: 'https://github.com/isaac-akinladejo/ai-crm-dashboard',
-      notion: 'https://notion.so/isaac-akinladejo/crm-case-study'
+      github: 'https://github.com/IsaacGridGainsDev/Font_Auto_Installer',
+      notion: 'https://www.notion.so/7b9b6948f785419a9d47036cdff2fcec?pvs=66&qid&origin'
     },
-    techStack: ['React', 'TailwindCSS', 'Node.js']
+    techStack: ['CustomTkinter', 'Python', 'GUI']
   },
   {
     id: 4,
-    title: 'Automated Workflow System',
-    description: 'End-to-end business process automation with AI decision making.',
-    tags: ['Workflow', 'Automation', 'Business'],
+    title: 'Automated Twitter Data Miner',
+    description: ' Python application for mining, analyzing, and visualizing Twitter data using both historical scraping and real-time streaming capabilities.',
+    tags: ['Data Mining', 'Automation', 'Business'],
     category: 'Business Systems',
     image: '/images/project4.svg', // Placeholder for SVG
     links: {
-      fiverr: 'https://fiverr.com/isaac_akinladejo/create-automated-workflow-systems',
+      github: 'https://github.com/IsaacGridGainsDev/Tweet-Harvester-GUI',
     },
     techStack: ['Python', 'FastAPI', 'PostgreSQL']
   },
@@ -67,10 +71,10 @@ const categories = [
   'Prompt Kits'
 ];
 
-const Projects = () => {
+const Projects: React.FC<ProjectsProps> = ({ id = 'projects' }) => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   
   // Filter projects based on active category
@@ -89,7 +93,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" ref={sectionRef} className="py-20 px-4">
+    <section id={id} ref={sectionRef} className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#800000] dark:text-white"

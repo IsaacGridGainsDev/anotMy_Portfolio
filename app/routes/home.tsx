@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { Route } from './+types/home';
 
 // Components
+import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from '../components/Projects';
@@ -41,12 +42,13 @@ export default function Home() {
 
   return (
     <div ref={mainRef} className="bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
+      <Navigation />
       <Hero />
       <About />
-      <Projects />
-      <TechStack />
-      <PromptKit />
-      <Contact />
+      <Projects id="projects" />
+      <TechStack id="tech-stack" />
+      <PromptKit id="prompt-kit" />
+      <Contact id="contact" />
       <Footer />
     </div>
   );

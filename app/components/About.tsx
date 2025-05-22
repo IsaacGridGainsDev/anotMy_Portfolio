@@ -9,14 +9,14 @@ const About = () => {
   // Timeline data
   const timelineEvents = [
     {
-      year: '2020',
-      title: 'Started AI Journey',
-      description: 'Began exploring machine learning and AI systems development.'
+      year: '2018',
+      title: 'Started Architecture Journey',
+      description: 'Began exploring design and systems development.'
     },
     {
       year: '2021',
       title: 'First AI Project',
-      description: 'Developed custom automation solutions for real estate clients.'
+      description: 'Developed a prompt to model a simple GUI app for email generation in Python'
     },
     {
       year: '2022',
@@ -26,12 +26,12 @@ const About = () => {
     {
       year: '2023',
       title: 'Systems Architecture',
-      description: 'Expanded into full AI systems architecture and integration.'
+      description: 'Began prototyping full AI systems architecture and integration.'
     },
     {
-      year: '2024',
+      year: '2025',
       title: 'Portfolio Growth',
-      description: 'Established presence on Fiverr and expanded client base globally.'
+      description: 'Established presence on Fiverr from the Alx Africa Freelancer Academy.'
     }
   ];
   

@@ -1,5 +1,9 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+
+interface TechStackProps {
+  id?: string;
+}
 import gsap from 'gsap';
 
 // Tech stack data
@@ -42,13 +46,13 @@ const techStackData = [
   },
 ];
 
-const TechStack = () => {
+const TechStack: React.FC<TechStackProps> = ({ id = 'tech-stack' }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const [activeItem, setActiveItem] = useState(null);
   
   return (
-    <section id="tech-stack" ref={sectionRef} className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
+    <section id={id} ref={sectionRef} className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#800000] dark:text-white"
